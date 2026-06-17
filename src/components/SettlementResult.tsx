@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Settlement, Person } from '../types';
 
 interface Props {

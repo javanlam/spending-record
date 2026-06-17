@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Person, Currency, SpendingLog } from '../types';
 import LogForm from './LogForm';
 import Modal from './Modal';

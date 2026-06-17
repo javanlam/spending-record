@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import { useReducer } from 'react';
 import './styles/App.css';
 import type { Person, Currency, SpendingLog, Settlement } from './types';
 import { exportLogsToCSV, importLogsFromCSV } from './utils/csv';
@@ -27,7 +27,6 @@ type Action =
   | { type: 'ADD_LOG'; payload: Omit<SpendingLog, 'id'> }
   | { type: 'EDIT_LOG'; payload: SpendingLog }
   | { type: 'DELETE_LOG'; payload: string }
-  | { type: 'IMPORT_LOGS'; payload: { logs: Omit<SpendingLog, 'id'>[]; people: Person[] } }
   | { type: 'COMPUTE_SETTLEMENT' }
   | { type: 'RESET_SETTLEMENT' }
   | { type: 'PROCEED_TO_LOGS' }
@@ -98,7 +97,7 @@ function App() {
 
   const handleExportCSV = () => {
     if (state.logs.length === 0) return;
-    const csv = exportLogsToCSV(state.logs, state.people);
+    const csv = exportLogsToCSV(state.logs, state.people, state.currencies);
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

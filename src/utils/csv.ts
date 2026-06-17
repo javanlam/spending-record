@@ -172,7 +172,7 @@ export function importLogsFromCSV(
     const involvedRaw = (row.involved || '').trim();
     let involvedIds: string[] = [];
     if (involvedRaw.toLowerCase() !== 'all' && involvedRaw) {
-      const names = involvedRaw.split(',').map(s => s.trim()).filter(Boolean);
+      const names = involvedRaw.split(',').map((s: string) => s.trim()).filter(Boolean);
       for (const name of names) {
         let person = newPeople.find(p => p.name === name);
         if (!person) {
