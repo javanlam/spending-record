@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/spending-record/',
+  base: 'spending-record',
 })
