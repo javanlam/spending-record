@@ -2,7 +2,7 @@
   "name": "spending-record",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.io",
+  "homepage": "https://javanlam.github.io/spending-record/",
   "type": "module",
   "scripts": {
     "dev": "vite",
